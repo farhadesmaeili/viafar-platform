@@ -2,10 +2,23 @@
   "name": "viafar-platform",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "nx run-many --projects=web,api --targets=dev,serve",
+    "build": "nx run-many --targets=build",
+    "lint": "nx run-many --targets=lint",
+    "typecheck": "nx run-many --targets=typecheck",
+    "test": "nx run-many --targets=test",
+    "graph": "nx graph",
+    "format": "nx format:write",
+    "format:check": "nx format:check",
+    "affected": "nx affected",
+    "prepare": "husky"
+  },
   "private": true,
   "devDependencies": {
     "@eslint/js": "^9.8.0",
+    "@nestjs/schematics": "^11.0.0",
+    "@nestjs/testing": "^11.0.0",
     "@next/eslint-plugin-next": "^16.1.6",
     "@nx/devkit": "23.1.0",
     "@nx/eslint": "23.1.0",
@@ -13,7 +26,10 @@
     "@nx/js": "23.1.0",
     "@nx/nest": "23.1.0",
     "@nx/next": "23.1.0",
+    "@nx/node": "23.1.0",
     "@nx/playwright": "23.1.0",
+    "@nx/web": "23.1.0",
+    "@nx/webpack": "23.1.0",
     "@playwright/test": "^1.37.0",
     "@swc-node/register": "1.11.1",
     "@swc/cli": "~0.8.1",
@@ -30,15 +46,25 @@
     "eslint-plugin-playwright": "^1.6.2",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "5.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.2.0",
     "nx": "23.1.0",
     "prettier": "^3.8.1",
     "tslib": "^2.3.0",
     "typescript": "~6.0.3",
-    "typescript-eslint": "^8.58.0"
+    "typescript-eslint": "^8.58.0",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^7.0.0",
+    "webpack-dev-server": "^5.2.1"
   },
   "dependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/platform-express": "^11.0.0",
     "next": "~16.1.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "reflect-metadata": "^0.2.0",
+    "rxjs": "^7.8.0"
   }
 }
