@@ -2,6 +2,7 @@
   "name": "viafar-platform",
   "version": "0.0.0",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "dev": "nx run-many --projects=web,api --targets=dev,serve",
     "build": "nx run-many --targets=build",
@@ -12,10 +13,17 @@
     "format": "nx format:write",
     "format:check": "nx format:check",
     "affected": "nx affected",
+    "commit": "cz",
     "prepare": "husky"
   },
-  "private": true,
+  "config": {
+    "commitizen": {
+      "path": "cz-git"
+    }
+  },
   "devDependencies": {
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
     "@eslint/js": "^9.8.0",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.0.0",
@@ -38,6 +46,8 @@
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "commitizen": "^4.3.2",
+    "cz-git": "^1.13.1",
     "eslint": "^9.8.0",
     "eslint-config-next": "^16.1.6",
     "eslint-config-prettier": "^10.0.0",
