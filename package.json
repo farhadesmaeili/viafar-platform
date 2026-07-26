@@ -10,8 +10,8 @@
     "typecheck": "nx run-many --targets=typecheck",
     "test": "nx run-many --targets=test",
     "graph": "nx graph",
-    "format": "nx format:write",
-    "format:check": "nx format:check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "affected": "nx affected",
     "commit": "cz",
     "prepare": "husky"
